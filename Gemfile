@@ -24,7 +24,8 @@ gem 'jbuilder', '~> 2.7'
 
 #Gems added by Kennedy after rails
 gem 'devise'
-
+#Gems added by Kennedy in ACTIVERECORD branch
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
