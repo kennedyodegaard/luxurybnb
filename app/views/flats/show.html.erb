@@ -1,1 +1,43 @@
-<h1>this is the Show page of <%= @flat.title %></h1>
+<div class="container">
+  <h1>this is the Show page of <%= @flat.title %></h1>
+  <p>4.8 Barcelona</p>
+  <img>
+  <div class="description-booking">
+    <div class="description">
+      <h2>In the heart of Montjuic</h2>
+      <p>2 guests</p>
+      <hr>
+      <p>Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Soluta, debitis! Ipsam labore corporis sint recusandae, distinctio repudiandae, accusantium officia molestias, hic quas repellendus sit facilis pariatur illum reprehenderit, incidunt deleniti!</p>
+      <div class="amenities">
+        <div class="amenity-item">
+          <img src="" alt="">
+          <p>Wifi</p>
+        </div>
+        <div class="amenity-item">
+          <img src="" alt="">
+          <p>Swimming Pool</p>
+        </div>
+        <div class="amenity-item">
+          <img src="" alt="">
+          <p>Helicopter parking</p>
+        </div>
+        <div class="amenity-item">
+          <img src="" alt="">
+          <p>Security</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking">
+      <h3>Your Order</h3>
+      <%= simple_form_for @flat do |f| %>
+        <%= f.input :checkin %>
+        <%= f.input :checkout %>
+        <%= f.input :guest %>
+        <p></p>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
