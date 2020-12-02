@@ -5,7 +5,10 @@
       <img src="<%= cl_image_path @flat.photo.key %>" id="show-image">
       <div class="description-booking">
         <div class="description">
+        <div class="description-edit d-flex justify-content-between">
           <h1><%= @flat.title %></h1>
+          <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_flat_path(@flat) %>
+        </div>
           <p><i class="fas fa-star"></i> 4.8 <%= @flat.location %></p>
           <p>2 guests</p>
           <hr>
