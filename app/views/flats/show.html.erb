@@ -1,37 +1,42 @@
 <div class="container">
-  <h1><%= @flat.title %></h1>
-  <p>4.8 Barcelona</p>
-  <img src="https://images.unsplash.com/photo-1562932831-afcfe48b5786?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1989&q=80" id="show-image">
-  <div class="description-booking">
-    <div class="description">
-      <h2>In the heart of Montjuic</h2>
-      <p>2 guests</p>
-      <hr>
-      <p>Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Soluta, debitis! Ipsam labore corporis sint recusandae, distinctio repudiandae, accusantium officia molestias, hic quas repellendus sit facilis pariatur illum reprehenderit, incidunt deleniti!</p>
-      <div class="amenities">
-        <div class="amenity-item">
-          <img src="" alt="">
-          <p>Wifi</p>
-        </div>
-        <div class="amenity-item">
-          <img src="" alt="">
-          <p>Swimming Pool</p>
-        </div>
-        <div class="amenity-item">
-          <img src="" alt="">
-          <p>Helicopter parking</p>
-        </div>
-        <div class="amenity-item">
-          <img src="" alt="">
-          <p>Security</p>
-        </div>
-      </div>
+  <div class="page-container">
+    <div class="show-title">
+      <h1><%= @flat.title %></h1>
+      <p>4.8 <%= @flat.location %></p>
     </div>
-      <div class="booking">
-        <h3>Your Booking</h3>
-        <p>Total: $40,000.00</p>
-        <a href="">Reserve</a>
-      </div>
-     </div>
+      <img src="<%= cl_image_path @flat.photo.key %>" id="show-image">
+      <div class="description-booking">
+        <div class="description">
+          <h2>In the heart of Montjuic</h2>
+          <p>2 guests</p>
+          <hr>
+          <p>This beautiful and completely mansion has everything you need for a great holiday. Big living and dining area along with two giant pools.
+
+          A stunning roof terrace with jacuzzi, lounge area, outdoor kitchen and helicopter parking. The mansion has high speed internet and a full home cinema setup. It's right in the centre of Montjuic and close to the beaches and the old town. The perfect oasis for your holiday in Barcelona.</p>
+          <!-- <div class="amenities">
+            <div class="amenity-item">
+              <img src="" alt="">
+              <p>Wifi</p>
+            </div>
+            <div class="amenity-item">
+              <img src="" alt="">
+              <p>Swimming Pool</p>
+            </div>
+            <div class="amenity-item">
+              <img src="" alt="">
+              <p>Helicopter parking</p>
+            </div>
+            <div class="amenity-item">
+              <img src="" alt="">
+              <p>Security</p>
+            </div>
+          </div> -->
+        </div>
+          <div class="booking">
+            <h3>Your Booking</h3>
+            <p>Total: $<%= @flat.price %></p>
+            <a href="" class="btn btn-primary">Reserve</a>
+          </div>
+         </div>
   </div>
 </div>

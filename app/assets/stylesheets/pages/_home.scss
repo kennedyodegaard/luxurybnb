@@ -1,1 +1,14 @@
-// Specific CSS for your home-page
+// Specific CSS for your home-pag
+.search-form{
+  margin-top: 30px;
+}
+
+.search-input{
+  width: 65%;
+  padding-top: 5px;
+  padding-bottom: 6px;
+}
+
+.hero{
+  height: calc(100vh - 50px);
+}
