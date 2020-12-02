@@ -1,8 +1,14 @@
-<%= simple_form_for(flat) do |f| %>
-  <!-- [...] -->
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.input :photo, as: :file %>
-  <!-- [...] -->
-<% end %>
+<div class="container">
+  <h1 class="mt-4">Post your luxury home</h1>
+  <p>Become a host.</p>
+  <%= simple_form_for(@flat) do |f| %>
+    <!-- [...] -->
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :location %>
+    <%= f.input :price %>
+    <%= f.input :photo, as: :file, input_html: { class: 'd-none'}, label_html: { class: 'btn btn-primary'}  %>
+    <%= f.submit input_html: { class: 'd-none'}, label_html: { class: 'btn btn-primary'}  %>
+    <!-- [...] -->
+  <% end %>
+</div>
