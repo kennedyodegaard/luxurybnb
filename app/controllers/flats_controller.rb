@@ -1,6 +1,10 @@
 class FlatsController < ApplicationController
   def index
-    @flats = Flat.all
+    if params[:query].present?
+      @flats = Flat.search_by_location_title(params[:query])
+    else
+      @flats = Flat.all
+    end
   end
 
   def show
@@ -34,6 +38,12 @@ class FlatsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @flat = Flat.find(params[:id])
+    @flat.destroy
+    redirect_to flats_path
   end
 
   private

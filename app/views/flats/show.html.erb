@@ -7,7 +7,11 @@
         <div class="description">
         <div class="description-edit d-flex justify-content-between">
           <h1><%= @flat.title %></h1>
+          <div class="icons">
+            <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, flat_path(@flat), method: :delete,
+            data: { confirm: "Are you sure?" }%>
           <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_flat_path(@flat) %>
+          </div>
         </div>
           <p><i class="fas fa-star"></i> 4.8 <%= @flat.location %></p>
           <p>2 guests</p>

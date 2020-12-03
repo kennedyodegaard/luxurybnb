@@ -3,11 +3,11 @@
   margin-top: 30px;
 }
 
-.search-input{
-  width: 65%;
-  padding-top: 5px;
-  padding-bottom: 6px;
-}
+// .search-input{
+//   width: 65%;
+//   padding-top: 5px;
+//   padding-bottom: 6px;
+// }
 
 .hero{
   height: calc(100vh - 50px);
@@ -17,4 +17,10 @@
 
 .hero-content{
   color: white;
+}
+
+.wide-input{
+  width: 65%;
+  padding-top: 5px;
+  padding-bottom: 6px;
 }
