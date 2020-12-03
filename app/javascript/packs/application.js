@@ -21,9 +21,11 @@ require("channels")
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
-
+// import { reserveBtn } from '../components/reserve-btn';
 // External imports
 import "bootstrap";
+import "../plugins/flatpickr";
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';

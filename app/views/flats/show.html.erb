@@ -39,7 +39,7 @@
           <div class="booking">
             <h3>Your Booking</h3>
             <p>Total: $<%= @flat.price %></p>
-            <a href="" class="btn btn-primary">Reserve</a>
+            <%= link_to "Reserve", new_flat_reservation_path(@flat), class: "btn btn-primary" %>
           </div>
          </div>
   </div>
