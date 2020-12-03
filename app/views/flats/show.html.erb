@@ -2,7 +2,11 @@
   <div class="page-container">
     <div class="show-title">
     </div>
-      <img src="<%= cl_image_path @flat.photo.key %>" id="show-image">
+      <% if @flat.photo.attached? %>
+           <img src="<%= cl_image_path @flat.photo.key %>" id="show-image">
+          <% else %>
+           <img src="https://images.unsplash.com/photo-1561026555-13539e82532f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80" id="show-image">
+          <% end %>
       <div class="description-booking">
         <div class="description">
         <div class="description-edit d-flex justify-content-between">
@@ -14,7 +18,7 @@
           </div>
         </div>
           <p><i class="fas fa-star"></i> 4.8 <%= @flat.location %></p>
-          <p>2 guests</p>
+          <p><i class="fas fa-user-astronaut"></i> <%= @flat.guests %> guests - <i class="fas fa-bed"></i>  <%= @flat.bedrooms %> bedrooms - <i class="fas fa-toilet"></i>  <%= @flat.bathrooms %> bathrooms</p>
           <hr>
           <p><%= @flat.description %></p>
           <!-- <div class="amenities">
@@ -26,7 +30,8 @@
               <img src="" alt="">
               <p>Swimming Pool</p>
             </div>
-            <div class="amenity-item">
+            <div class="amenity-item
+          ">
               <img src="" alt="">
               <p>Helicopter parking</p>
             </div>
