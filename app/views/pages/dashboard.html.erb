@@ -1,0 +1,64 @@
+<div class="container">
+  <h1>Dashboard</h1>
+  <br>
+  <div>
+    <h2>Booking requests for my homes:</h2>
+    <div class="row mt-4">
+      <% @flats.each do |flat| %>
+        <% flat.reservations.each do |reservation| %>
+        <div class="col-md-4">
+        <div class="card mb-4">
+              <img src="<%= cl_image_path flat.photo.key %>" class="card-img-top" alt="..." style="height: 220px;">
+              <div class="card-body">
+                <h5 class="card-title"><%=reservation.flat.title %></h5>
+                <p class="card-text">From <strong><%= reservation.start_date %></strong>  to <strong><%= reservation.end_date %></strong></p>
+                <div class="button-price d-flex justify-content-between d-inline-block">
+                  <p class="card-text"><strong>Contact User:</strong> <%=reservation.flat.user.email%></p>
+                </div>
+              </div>
+              <div class="text-center">
+              <% if reservation.status == "pending" %>
+                <%=  link_to "Accept", accept_path(reservation.id), class: "btn btn-success h3" %>
+                <%=  link_to "Reject", decline_path(reservation.id), class: "btn btn-danger h3" %>
+              <% elsif reservation.status == "accepted" %>
+                <h3 class="btn btn-outline-success">Accepted</h3>
+              <% else %>
+                <h3 class="btn btn-outline-danger">Rejected</h3>
+              <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div>
+  <br>
+    <h2>Booking requests I've made:</h2>
+    <div class="row mt-4">
+        <% @reservations.each do |reservation| %>
+        <div class="col-md-4">
+        <div class="card mb-4">
+              <img src="<%= cl_image_path reservation.flat.photo.key %>" class="card-img-top" alt="..." style="height: 220px;">
+              <div class="card-body">
+                <h5 class="card-title"><%=reservation.flat.title %></h5>
+                <p class="card-text">From <strong><%= reservation.start_date %></strong>  to <strong><%= reservation.end_date %></strong></p>
+                <div class="button-price d-flex justify-content-between d-inline-block">
+                </div>
+              </div>
+              <div class="text-center">
+              <% if reservation.status == "pending" %>
+                <h3 class="btn btn-outline-warning">Pending</h3>
+              <% elsif reservation.status == "accepted" %>
+                <h3 class="btn btn-outline-success">Accepted</h3>
+              <% else %>
+                <h3 class="btn btn-outline-danger">Rejected</h3>
+              <% end %>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
