@@ -1,6 +1,9 @@
 class ReviewsController < ApplicationController
     def create
+        @user = current_user
+        @reservation = Reservation.new
         @review = Review.new(set_params_review)
+        @review.user = @user
         @flat = Flat.find(params[:flat_id])
         @review.flat = @flat
         if @review.save
