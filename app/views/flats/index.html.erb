@@ -32,7 +32,7 @@
              <p class="card-text"> <%=flat.description.truncate(100) %></p>
             </div>
             <div class="button-price d-flex justify-content-between d-inline-block">
-              <p class="card-text"> $<%=flat.price%></p>
+              <p class="card-text"> $<%= number_with_delimiter(flat.price, :delimiter => ',') %></p>
               <%= link_to "Book", flat_path(flat), class: "btn btn-primary" %>
             </div>
           </div>
