@@ -2,21 +2,23 @@
 <p>Find me in app/views/pages/home.html.erb</p> -->
 <div class="hero">
   <div class="container h-100 d-flex flex-column justify-content-between">
-    <div class="search-form form-inline" align="center">
 <!--       <form>
         <input type="text" class="search-input" placeholder="Search">
 
         <button type="submit" class="btn btn-primary">Search</button>
       </form> -->
+    <div class="search-form">
        <%= form_tag flats_path, method: :get do %>
-        <%= text_field_tag :query,
+       <div class="form-row">
+        <div class="col-7"><%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "Find a luxury home"
-        %>
+        %></div>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
+  </div>
     <div class="hero-content">
       <h1>The world's most extraordinary homes.</h1>
       <p><span id="title"></span></p>
@@ -25,3 +27,4 @@
     <div></div>
   </div>
 </div>
+<!-- class="search-form form-inline" align="center" -->
