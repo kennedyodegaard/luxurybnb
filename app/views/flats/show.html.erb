@@ -42,26 +42,33 @@
         <p>Post a review</p>
         <%= simple_form_for([@flat, @review], remote: true)  do |f| %>
         <%= f.input :description %>
-        <%= f.input :rating, range: (1..5) %>
+        <%= f.input :rating, as: :range, input_html: { min: 0, max: 5}%>
         <%= f.submit  class: 'btn btn-primary'  %>
        <% end %>
       </div>
         <div id="reviews">
         <% if @flat.reviews.blank? %>
-            <h3>Be the first to leave a review for <%= @flat.title %></h3>
+            <h3 class="mt-4">Be the first to leave a review for <%= @flat.title %></h3>
         <% else %>
+          <div class="star">
             <% @flat.reviews.each do |review| %>
-            <div class="review-card">
-            <% unless review.rating.nil? %>
-            <% review.rating.times do %>
-             <i class="fas fa-star"></i>
+            <div class="review-card d-flex justify-content-between mt-3">
+              <div class="review-info">
+                  <p class="bigger-description">"<%= review.description %>"</p>
+                  <p id="review"> Posted at: <%= review.created_at.strftime("%A, %b %d") %>, written by <%= review.user.email%> </p>
+              </div>
+              <div class="rating">
+                <% unless review.rating.nil? %>
+                <% review.rating.times do %>
+                <i class="fas fa-star"></i>
+                <% end %>
               <% end %>
-            <% end %>
-
-             <p id="review">"<%= review.description %>"<%= review.rating %>, written by <%= review.user.email%> </p>
+               </div>
+              </div>
             </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
      </div>
   </div>
 </div>
