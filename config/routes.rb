@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :flats, except: [:destroy] do
+    resources :reviews, only: [:new, :create]
     resources :reservations, only: [:new, :create]
   end
   delete 'flats/:id', to: 'flats#destroy'
