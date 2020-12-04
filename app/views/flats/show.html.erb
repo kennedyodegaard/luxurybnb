@@ -21,31 +21,22 @@
           <p><i class="fas fa-user-astronaut"></i> <%= @flat.guests %> guests - <i class="fas fa-bed"></i>  <%= @flat.bedrooms %> bedrooms - <i class="fas fa-toilet"></i>  <%= @flat.bathrooms %> bathrooms</p>
           <hr>
           <p><%= @flat.description %></p>
-          <!-- <div class="amenities">
-            <div class="amenity-item">
-              <img src="" alt="">
-              <p>Wifi</p>
-            </div>
-            <div class="amenity-item">
-              <img src="" alt="">
-              <p>Swimming Pool</p>
-            </div>
-            <div class="amenity-item
-          ">
-              <img src="" alt="">
-              <p>Helicopter parking</p>
-            </div>
-            <div class="amenity-item">
-              <img src="" alt="">
-              <p>Security</p>
-            </div>
-          </div> -->
         </div>
           <div class="booking">
-            <h3>Your Booking</h3>
-            <p>Total: $<%= @flat.price %></p>
-            <%= link_to "Reserve", new_flat_reservation_path(@flat), class: "btn btn-primary" %>
-          </div>
+            <div class="container">
+              <div class="form-wrapper" style="margin: 0 auto;">
+                <h1>Reserve your luxury home</h1>
+                <p>Give us some details first.</p>
+                <%= simple_form_for [@flat, @reservation] do |f| %>
+                  <%= f.input :start_date %>
+                  <%= f.input :end_date %>
+                  <h4 class="mt-4 mb-4">Total: $<%= number_with_delimiter(@flat.price, :delimiter => ',') %></h4>
+                  <%= f.button :submit, "Reserve", class: "btn btn-primary" %>
+                <% end %>
+              </div>
+            </div>
+
          </div>
+      </div>
   </div>
 </div>
