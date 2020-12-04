@@ -30,9 +30,11 @@
 .booking{
   width: 50%;
   margin-left: 50px;
-  border: solid 1px gray;
-  padding: 50px;
-  border-radius: 20px;
+  border: solid 1px lightgray;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  background-color: white;
 }
 
 #show-image{
