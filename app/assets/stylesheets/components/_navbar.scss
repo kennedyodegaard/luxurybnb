@@ -24,3 +24,15 @@
 #downarrow {
   font-size: 10px;
 }
+
+
+.dropdown-menu a{
+    color: $body-color !important;
+}
+
+.dropdown-menu > a:hover {
+    background-image: none;
+    background-color: $primary;
+    color: $white !important;
+}
+

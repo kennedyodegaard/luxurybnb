@@ -22,12 +22,12 @@
         <div class="card mb-4" style="box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   border-radius: 16px;">
           <% if flat.photo.attached? %>
-           <img src="<%= cl_image_path flat.photo.key %>" alt="..." style="height: 220px" id="round-top">
+           <img src="<%= cl_image_path flat.photo.key %>" style="height: 220px;" alt="..." id="round-top">
           <% else %>
            <img src="https://images.unsplash.com/photo-1561026555-13539e82532f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80" class="card-img-top" alt="..." style="height: 220px;">
           <% end %>
-          <div class="card-body" style="height: 220px;">
-            <h5 class="card-title"><%=flat.title %></h5>
+          <div class="card-body">
+            <h5 class="card-title" style="min-height: 45px;"><%=flat.title %></h5>
             <div class="description-a" style= "height: 100px;" "width: 100%;">
              <p class="card-text"> <%=flat.description.truncate(100) %></p>
             </div>
