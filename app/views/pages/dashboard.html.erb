@@ -21,9 +21,9 @@
                 <%=  link_to "Accept", accept_path(reservation.id), class: "btn btn-success h3" %>
                 <%=  link_to "Reject", decline_path(reservation.id), class: "btn btn-danger h3" %>
               <% elsif reservation.status == "accepted" %>
-                <h3 class="btn btn-outline-success">Accepted</h3>
+                <button type="button" class="btn btn-outline-success active mb-1">Accepted 😄</button>
               <% else %>
-                <h3 class="btn btn-outline-danger">Rejected</h3>
+                <button type="button" class="btn btn-outline-danger mb-1" disabled>Declined 😌</button>
               <% end %>
               </div>
             </div>
@@ -48,11 +48,11 @@
               </div>
               <div class="text-center">
               <% if reservation.status == "pending" %>
-                <h3 class="btn btn-outline-warning">Pending</h3>
+                <button type="button" class="btn btn-outline-warning active mb-1">Pending</button>
               <% elsif reservation.status == "accepted" %>
-                <h3 class="btn btn-outline-success">Accepted</h3>
+                <button type="button" class="btn btn-outline-success active mb-1">Accepted 😄</button>
               <% else %>
-                <h3 class="btn btn-outline-danger">Rejected</h3>
+                <button type="button" class="btn btn-outline-danger mb-1" disabled>Declined 😌</button>
               <% end %>
               </div>
             </div>
