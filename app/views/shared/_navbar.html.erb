@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-light bg-primary">
+<nav class="navbar sticky-top navbar-light bg-secondary">
   <div class="container">
     <a id="logo" href="/"><i class="h5 far fa-gem"></i></i></i> LuxuryBnB</a>
 
@@ -11,10 +11,10 @@
         <% if user_signed_in? %>
           <%= link_to "Dashboard", dashboard_path, class: "dropdown-item btn btn-outline-light" %>
           <%= link_to "Post your home", new_flat_path, class: "dropdown-item btn btn-outline-light" %>
-          <%= link_to "Sign-out", destroy_user_session_path, method: :delete, class: "dropdown-item btn btn-outline-light" %>
+          <%= link_to "Sign-out", destroy_user_session_path, method: :delete, class: " dropdown-item btn btn-outline-light" %>
         <% else %>
-          <%= link_to "Sign-up", new_user_registration_path, class: "btn btn-outline-light" %>
-          <%= link_to "Login", new_user_session_path, class: "btn btn-outline-light" %>
+          <%= link_to "Sign-up", new_user_registration_path, class: " dropdown-item btn btn-outline-light" %>
+          <%= link_to "Login", new_user_session_path, class: " dropdown-item btn btn-outline-light" %>
         <% end %>
       </div>
     </div>
