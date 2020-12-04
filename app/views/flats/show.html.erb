@@ -25,12 +25,12 @@
           <div class="booking">
             <div class="container">
               <div class="form-wrapper" style="margin: 0 auto;">
-                <h1>Reserve your luxury home</h1>
+                <h3>Reserve your luxury home</h3>
                 <p>Give us some details first.</p>
                 <%= simple_form_for [@flat, @reservation] do |f| %>
                   <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
                         <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
-                  <h4 class="mt-4 mb-4">Total: $<%= number_with_delimiter(@flat.price, :delimiter => ',') %></h4>
+                  <h5 class="mt-4 mb-4">Total: $<%= number_with_delimiter(@flat.price, :delimiter => ',') %></h5>
                   <%= f.button :submit, "Reserve", class: "btn btn-primary" %>
                 <% end %>
               </div>

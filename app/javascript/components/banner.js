@@ -3,7 +3,7 @@ import Typed from 'typed.js';
 const loadDynamicBannerText = () => {
   if (document.getElementById("title")) {
     new Typed('#title', {
-      strings: ["Go near", "Go luxury"],
+      strings: ["The world's most beautiful homes.", "The world's most extraordinary homes."],
       typeSpeed: 50,
       loop: true
     });
