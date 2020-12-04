@@ -38,7 +38,12 @@
          </div>
       </div>
       <div class="reviews">
-
+        <h1 class="mt-4">Have you been to this house?</h1>
+        <p>Post a review</p>
+        <%= simple_form_for [@flat, @review] do |f| %>
+        <%= f.input :description %>
+        <%= f.submit  class: 'btn btn-primary'  %>
+       <% end %>
       </div>
   </div>
 </div>
